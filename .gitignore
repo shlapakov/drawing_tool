@@ -1,2 +1,4 @@
 /venv/
 .gitignore
+input.txt
+output.txt

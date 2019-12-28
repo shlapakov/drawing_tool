@@ -5,8 +5,8 @@ import io
 
 
 class Line(BaseCommand, BaseError):
-    def __init__(self, file: io.TextIOWrapper, template: list, char: str):
-        super().__init__(file, template, char)
+    def __init__(self, file: io.TextIOWrapper, template: list):
+        super().__init__(file, template)
         self.char = LINE_SYMBOL
 
     def check_errors(self, x1, y1, x2, y2):
@@ -39,4 +39,3 @@ class Line(BaseCommand, BaseError):
 
         self.file.write('\n'.join(self.template) + '\n')
         return self.template
-
