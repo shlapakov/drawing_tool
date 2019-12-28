@@ -19,6 +19,11 @@ class Line(BaseCommand, BaseError):
         
         self.check_errors(x1, y1, x2, y2)
 
+        if x1 > x2:
+            x1, x2 = x2, x1
+        if y1 > y2:
+            y1, y2 = y2, y1
+
         if y1 == y2:
             for place, x in enumerate(self.template[y1]):
                 if x1 <= place <= x2:
