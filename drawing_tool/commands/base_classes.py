@@ -1,9 +1,13 @@
 from drawing_tool.error import ValidationError
-import io
 
 
 class BaseCommand:
-    def __init__(self, file: io.TextIOWrapper, template: list = None, char: str = ' '):
+    def __init__(self, file, template: list = None, char: str = ' '):
+        """
+        :param file: open file
+        :param template: (optional) list of str that will be added to the file at the end of step
+        :param char: (optional) character that is used for drawing
+        """
         self.file = file
         self.template = template if template else []
         self.char = char

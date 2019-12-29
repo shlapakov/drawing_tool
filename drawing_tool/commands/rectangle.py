@@ -1,12 +1,10 @@
-from drawing_tool.constants import BACKGROUND_SYMBOL, RECTANGLE_SYMBOL
+from drawing_tool.constants import BACKGROUND_SYMBOL
 from .base_classes import BaseCommand, BaseError
 from .line import Line
 
-import io
-
 
 class Rectangle(BaseCommand, BaseError):
-    def __init__(self, file: io.TextIOWrapper, template: list):
+    def __init__(self, file, template: list):
         super().__init__(file, template)
 
     def clear_fill(self, x1, y1, x2, y2):
@@ -44,5 +42,3 @@ class Rectangle(BaseCommand, BaseError):
         ).create(x2, y1, x2, y2)
 
         return self.template
-
-

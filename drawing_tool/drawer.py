@@ -12,22 +12,25 @@ import os
 
 
 class CommandReader:
-    def __init__(self, file='input.txt', open_mode='r'):
+    def __init__(self, open_mode='r'):
+        self.file = input('Input file path: ')
         self.open_mode = open_mode
-        self.file = file
 
     def set_file_path(self):
-        self.file = input('Input file path: ')
         return os.path.split(self.file)[0] + '\\output.txt'
 
     @property
     def commands(self) -> list:
+        """
+        :return: list of commands from file
+        """
+        print(self.file)
         with open(self.file, self.open_mode) as f:
             return f.read().splitlines()
 
 
 class Drawer:
-    def __init__(self, commands: list, output_file: str):
+    def __init__(self, commands: list, output_file):
         self.commands = commands
         self.output_file = output_file
 

@@ -5,7 +5,7 @@ import io
 
 
 class Line(BaseCommand, BaseError):
-    def __init__(self, file: io.TextIOWrapper, template: list):
+    def __init__(self, file, template: list):
         super().__init__(file, template)
         self.char = LINE_SYMBOL
 

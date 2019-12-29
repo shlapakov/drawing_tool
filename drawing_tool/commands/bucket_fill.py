@@ -1,4 +1,3 @@
-import io
 
 from drawing_tool.constants import SYMBOLS
 from drawing_tool.error import ValidationError
@@ -6,7 +5,7 @@ from .base_classes import BaseCommand
 
 
 class BucketFill(BaseCommand):
-    def __init__(self, file: io.TextIOWrapper, template: list):
+    def __init__(self, file, template: list):
         super().__init__(file, template)
 
     def check_errors(self, x, y, c):
