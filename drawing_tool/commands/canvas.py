@@ -18,7 +18,7 @@ class Canvas(BaseCommand):
         template = [HORIZONTAL_BORDER_SYMBOL * (w + 2)]
         for pixel in range(h):
             template.append(VERTICAL_BORDER_SYMBOL + BACKGROUND_SYMBOL * w + VERTICAL_BORDER_SYMBOL)
-
+        template.append(HORIZONTAL_BORDER_SYMBOL * (w + 2))
         self.file.write('\n'.join(template) + '\n')
 
         return template

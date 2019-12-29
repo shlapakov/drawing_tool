@@ -36,12 +36,12 @@ class Rectangle(BaseCommand, BaseError):
         Line(
             file=self.file,
             template=self.template
-        ).create(x1, y1+1, x1, y2-1, saving=False)
+        ).create(x1, y1, x1, y2, saving=False)
 
         Line(
             file=self.file,
             template=self.template
-        ).create(x2, y1+1, x2, y2-1)
+        ).create(x2, y1, x2, y2)
 
         return self.template
 

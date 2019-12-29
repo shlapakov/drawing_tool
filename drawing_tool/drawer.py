@@ -1,8 +1,9 @@
-from drawing_tool.commands import Line, Canvas, Rectangle
+from drawing_tool.commands import Line, Canvas, Rectangle, BucketFill
 from drawing_tool.constants import (
     LINE_COMMAND,
     CANVAS_COMMAND,
     RECTANGLE_COMMAND,
+    BUCKETFILL_COMMAND,
     COMMANDS)
 
 from drawing_tool.error import ValidationError
@@ -54,6 +55,9 @@ class Drawer:
 
                 if command_type == RECTANGLE_COMMAND:
                     template = Rectangle(f, template).create(*command_params)
+
+                if command_type == BUCKETFILL_COMMAND:
+                    template = BucketFill(f, template).create(*command_params)
 
         return True
 
