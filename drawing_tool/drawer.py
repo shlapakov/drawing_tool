@@ -8,11 +8,17 @@ from drawing_tool.constants import (
 
 from drawing_tool.error import ValidationError
 
+import os
+
 
 class CommandReader:
     def __init__(self, file='input.txt', open_mode='r'):
         self.open_mode = open_mode
         self.file = file
+
+    def set_file_path(self):
+        self.file = input('Input file path: ')
+        return os.path.split(self.file)[0] + '\\output.txt'
 
     @property
     def commands(self) -> list:
@@ -21,7 +27,7 @@ class CommandReader:
 
 
 class Drawer:
-    def __init__(self, commands: list, output_file='output.txt'):
+    def __init__(self, commands: list, output_file: str):
         self.commands = commands
         self.output_file = output_file
 
@@ -39,7 +45,7 @@ class Drawer:
 
     def draw(self):
         self.check_errors()
-        with open(self.output_file, 'a') as f:
+        with open(self.output_file, 'w') as f:
             template = []
 
             for command in self.commands:
@@ -60,5 +66,3 @@ class Drawer:
                     template = BucketFill(f, template).create(*command_params)
 
         return True
-
-
