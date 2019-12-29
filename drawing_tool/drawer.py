@@ -24,7 +24,6 @@ class CommandReader:
         """
         :return: list of commands from file
         """
-        print(self.file)
         with open(self.file, self.open_mode) as f:
             return f.read().splitlines()
 
