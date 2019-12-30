@@ -15,7 +15,7 @@ class Line(BaseCommand, BaseError):
         if x1 != x2 and y1 != y2:
             raise ValidationError('You can use only horizontal and vertical lines')
 
-    def create(self, x1, y1, x2, y2, saving=True):
+    def create(self, x1, y1, x2, y2, saving=True) -> list:
         
         self.check_errors(x1, y1, x2, y2)
 

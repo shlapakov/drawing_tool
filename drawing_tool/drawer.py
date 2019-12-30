@@ -16,7 +16,10 @@ class CommandReader:
         self.file = input('Input file path: ')
         self.open_mode = open_mode
 
-    def set_file_path(self):
+    def set_file_path(self) -> str:
+        """
+        :return: path of output file
+        """
         return os.path.split(self.file)[0] + '\\output.txt'
 
     @property

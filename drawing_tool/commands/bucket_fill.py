@@ -61,7 +61,7 @@ class BucketFill(BaseCommand):
             if self.is_empty_area(x_position, y - 1):
                 self.check_area(x_position, y - 1)
 
-    def create(self, x, y, c: str):
+    def create(self, x, y, c: str) -> list:
         self.check_errors(x, y, c)
         self.char = c
         self.check_area(x, y)

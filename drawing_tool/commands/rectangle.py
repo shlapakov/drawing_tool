@@ -17,7 +17,7 @@ class Rectangle(BaseCommand, BaseError):
                         self.template[y_position][x_position + 1:]
                     ))
 
-    def create(self, x1, y1, x2, y2):
+    def create(self, x1, y1, x2, y2) -> list:
         self.check_errors(self.file, self.template, x1, y1, x2, y2)
         self.clear_fill(x1, y1, x2, y2)
 

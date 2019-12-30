@@ -12,7 +12,7 @@ class Canvas(BaseCommand):
         if self.file.closed:
             raise ValidationError(f'File {self.file} is not open')
 
-    def create(self, w, h):
+    def create(self, w, h) -> list:
 
         self.check_errors(w, h)
         template = [HORIZONTAL_BORDER_SYMBOL * (w + 2)]
